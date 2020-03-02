@@ -178,7 +178,9 @@ function LoginForm(props) {
                     </Link>
                 </div>
                 <div className="col-sm-6 text-right">
-                    <div className="text-muted font-13" style={{cursor: 'pointer'}}><i className="dripicons-lock" /> Forgot password?</div>
+                    <Link to="/recover">
+                        <div className="text-muted font-13" style={{cursor: 'pointer'}}><i className="dripicons-lock" /> Forgot password?</div>
+                    </Link>
                 </div>
                 {/*end col*/}
             </div>

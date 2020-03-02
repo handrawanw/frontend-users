@@ -100,12 +100,12 @@ function AuthTwo(props) {
                         <i className="dropicons-user text-muted mr-2"/>
                         Profile                        
                     </Link> */}
-                    <div className="dropdown-item" to="/profile" style={{cursor: 'pointer'}}>
-                        <Link to={`${url}/profile`}>
+                    <Link to={`${url}/profile`}>
+                        <button className="dropdown-item" type="button">
                             <i className="dripicons-user text-muted mr-2" />
                             Profile
-                        </Link>
-                    </div>
+                        </button>
+                    </Link>
                     <button className="dropdown-item" type="button"><i className="dripicons-wallet text-muted mr-2" /> My Wallet</button>
                     <button className="dropdown-item" type="button"><i className="dripicons-gear text-muted mr-2" /> Settings</button>
                     {/*<a class="dropdown-item" href="#"><i class="dripicons-lock text-muted mr-2"></i> Lock screen</a>*/}
