@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { userContext } from '../../context';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 function SummaryDetail() {
 
@@ -12,7 +13,7 @@ function SummaryDetail() {
             </div>
 
             <div className="col-lg-8">
-                <CardRefferral/>
+                <CardRefferral referal="https://codeotoken.com//accounts/sign_up?referral_code=ID70E44EF7F5"/>
                 <CardSummary/>
             </div>
 
@@ -93,6 +94,8 @@ const CardLogHistory = (props) => {
 }
 
 const CardRefferral = (props) => {
+    const [textCopied, setTextCopied] = useState(false);
+
     return(
         <div className="card">
             <div className="card-body">
@@ -103,11 +106,13 @@ const CardRefferral = (props) => {
                     </div>
                     <div className="col-md-9">
                         <div className="input-group">
-                            <input type="text" className="form-control" id="clipboardInput" defaultValue="https://codeotoken.com//accounts/sign_up?referral_code=ID70E44EF7F5" />
+                            <input type="text" className="form-control" id="clipboardInput" defaultValue={props.referal} />
                             <div className="input-group-append">
-                                <button type="button" className="btn btn-secondary btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#clipboardInput">
-                                <i className="far fa-copy" />
-                                </button>
+                                <CopyToClipboard text={props.referal} onCopy={() => setTextCopied(true)}>
+                                    <button type="button" className="btn btn-secondary btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#clipboardInput">
+                                        <i className="far fa-copy" />
+                                    </button>
+                                </CopyToClipboard>
                             </div>                                        
                         </div>
                     </div>
