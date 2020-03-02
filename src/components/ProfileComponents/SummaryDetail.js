@@ -10,6 +10,7 @@ function SummaryDetail() {
             </div>
 
             <div className="col-lg-8">
+                <CardRefferral/>
                 <CardSummary/>
             </div>
 
@@ -85,6 +86,31 @@ const CardLogHistory = (props) => {
                     </div>{/*end activity*/}
                 </div>{/*end education-activity*/}
             </div> {/*end card-body*/}
+        </div>
+    )
+}
+
+const CardRefferral = (props) => {
+    return(
+        <div className="card">
+            <div className="card-body">
+                <h4 className="header-title mt-0 mb-3">Your Referral</h4>
+                <div className="row mb-4">
+                    <div className="col-md-3 mt-2">
+                        Referral Link :
+                    </div>
+                    <div className="col-md-9">
+                        <div className="input-group">
+                            <input type="text" className="form-control" id="clipboardInput" defaultValue="https://codeotoken.com//accounts/sign_up?referral_code=ID70E44EF7F5" />
+                            <div className="input-group-append">
+                                <button type="button" className="btn btn-secondary btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#clipboardInput">
+                                <i className="far fa-copy" />
+                                </button>
+                            </div>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>{/*end card-body*/}
         </div>
     )
 }

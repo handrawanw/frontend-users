@@ -138,7 +138,20 @@ function LoginTemplate(props) {
 function LoginForm(props) {
   
     return (
+        
         <form className="form-horizontal auth-form" onSubmit={props.onLogin}>
+            <div class="alert icon-custom-alert alert-pink b-round fade show" role="alert">                                            
+                <i class="mdi mdi-alert-outline alert-icon"></i>
+                <div class="alert-text">
+                    <strong>Error !</strong> form cannot be empty.
+                </div>
+                
+                <div class="alert-close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="mdi mdi-close text-danger"></i></span>
+                    </button>
+                </div>
+            </div>
             <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <div className="input-group mb-3">

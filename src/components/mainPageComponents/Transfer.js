@@ -93,6 +93,18 @@ class TransferHistory extends React.Component {
                         <div className="col-12">
                             <h3>Transfer Balance</h3>
                             <form className="form-horizontal">
+                                <div class="alert icon-custom-alert alert-pink b-round fade show" role="alert">                                            
+                                    <i class="mdi mdi-alert-outline alert-icon"></i>
+                                    <div class="alert-text">
+                                        <strong>Error !</strong> form cannot be empty.
+                                    </div>
+                                    
+                                    <div class="alert-close">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true"><i class="mdi mdi-close text-danger"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
                                 <div className="form-group mb-0">
                                     <label className="full-left">Receiver</label>
                                     <div className="input-group mt-3">

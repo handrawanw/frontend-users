@@ -160,6 +160,18 @@ function RegisterTemplate(props) {
 function RegisterForm(props) {
     return (
     <form className="form-horizontal auth-form my-4" onSubmit={props.onRegister}>
+        <div class="alert icon-custom-alert alert-pink b-round fade show" role="alert">                                            
+            <i class="mdi mdi-alert-outline alert-icon"></i>
+            <div class="alert-text">
+                <strong>Error !</strong> form cannot be empty.
+            </div>
+            
+            <div class="alert-close">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true"><i class="mdi mdi-close text-danger"></i></span>
+                </button>
+            </div>
+        </div>
         <div className="form-group">
             <label htmlFor="name">Name</label>
             <div className="input-group mb-3">
@@ -216,6 +228,22 @@ function RegisterForm(props) {
 
             {/* INPUT =========================================== */}
                 <input value={props.registerData.confirm_password} onChange={props.handleChange} type="password" className='form-control frm-new' id="password_confirm" placeholder="Enter password" name="confirm_password"/>
+            {/* INPUT =========================================== */}
+            
+            </div>
+            {/* {errors.password_confirm && (<div className="invalid-feedback pesanerror">{errors.password_confirm}</div>)} */}
+        </div>
+        {/*end form-group*/}
+        <div className="form-group">
+            <label htmlFor="password_confirm">Referral (Optional)</label>
+            <div className="input-group mb-3">
+                <span className="auth-form-icon">
+                    <i className="dripicons-lock" /> 
+                </span>
+
+
+            {/* INPUT =========================================== */}
+                <input value={props.registerData.referral} onChange={props.handleChange} type="referral" className='form-control frm-new' id="referral" placeholder="Enter referral" name="referral"/>
             {/* INPUT =========================================== */}
             
             </div>
