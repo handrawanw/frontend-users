@@ -18,6 +18,7 @@ import Profile from '../pages/Profile';
 import { urlContext, userContext } from '../context';
  
 import Swal from 'sweetalert2';
+import ProfileChangePassword from '../components/ProfileComponents/ProfileChangePassword';
 
 export default function MyWallet() {
     
@@ -65,6 +66,9 @@ export default function MyWallet() {
                 <Route path={`${path}/profile`}>
                     <Profile />
                 </Route>
+                <Route path={`${path}/changePassword`}>
+                    <ProfileChangePassword />
+                </Route>
             </Switch>
 
                     <Footer />
@@ -85,7 +89,6 @@ const Header = (props) => {
         </div>
     )
 };
-
 
 const MainPage = (props) => {
     return (

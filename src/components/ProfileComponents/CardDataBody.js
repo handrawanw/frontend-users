@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useHistory, useRouteMatch, Link } from 'react-router-dom';
+import { userContext } from '../../context';
 
 export default function CardDataBody() {
+    let dataProfile = useContext(userContext);
+
+    let { url } = useRouteMatch();
+
     return (
         <div className="card-body met-pro-bg">
             <div className="met-profile">
@@ -14,11 +20,11 @@ export default function CardDataBody() {
                                                 </span>
                             </div>
                             <div className="met-profile_user-detail">
-                                <h5 className="met-user-name" style={{float: 'left'}}>Ivan Juliant </h5><span className="badge badge-success" style={{marginTop: '15px', marginLeft: '10px'}}><i className="fa fa-check" /> Verified</span>
+                                <h5 className="met-user-name" style={{float: 'left'}}>{dataProfile.name} </h5><span className="badge badge-success" style={{marginTop: '15px', marginLeft: '10px'}}><i className="fa fa-check" /> Verified</span>
                                 <br />
                                 <br />
                                 <p className="mb-0 met-user-name-post" style={{float: 'left'}}>
-                                    <label style={{float: 'left', width: '60px'}} className="mb-0">Email</label> : ivanjuliant30@gmail.com</p>
+                                    <label style={{float: 'left', width: '60px'}} className="mb-0">Email</label> : {dataProfile.email}</p>
                                 <br />
                                 <p className="mb-0 met-user-name-post" style={{float: 'left'}}>
                                     <label style={{float: 'left', width: '60px'}} className="mb-0">Country</label> : Indonesia</p>
@@ -27,12 +33,12 @@ export default function CardDataBody() {
                     </div>{/*end col*/}
                     <div className="col-lg-6">
                         <div className="mt-5" style={{float: 'right'}}>
-                            
+                            <Link className="btn btn-warning" to={`${url}/editprofile`}>
                                 <i className="fa fa-edit" /> Edit Data
-                            
-                            
+                            </Link>
+                            <Link className="btn btn-success ml-2" to={`${url}/changepassword`}>
                                 <i className="fa fa-edit" /> Change Password
-                        
+                            </Link>
                         </div>
                     </div>{/*end col*/}
                 </div>{/*end row*/}

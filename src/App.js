@@ -10,6 +10,7 @@ import { Route, Switch, useHistory, Redirect } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import MyWallet from './pages/MyWallet';
+import Recover from './pages/Recover';
 
 //Auth
 import auth from './auth';
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/mywallet" component={MyWallet} />
+          <Route path="/recover" component={Recover} />
         </Switch>
 
   )

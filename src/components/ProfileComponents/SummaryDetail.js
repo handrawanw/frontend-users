@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { userContext } from '../../context';
 
 function SummaryDetail() {
+
     return (
     <div className="tab-pane fade show active" id="summary_detail">
         <div className="row">
@@ -116,6 +118,8 @@ const CardRefferral = (props) => {
 }
 
 const CardSummary = (props) => {
+    let user = useContext(userContext);
+
     return(
         <div className="card">
             <div className="card-body">
@@ -130,7 +134,7 @@ const CardSummary = (props) => {
                                 <dt className="col-md-5">Swift Code</dt>
                                 <dd className="col-md-7">: CENAIDJA</dd>
                                 <dt className="col-md-5">Account Name</dt>
-                                <dd className="col-md-7">: Ivan Juliant</dd>
+                                <dd className="col-md-7">: {user.name}</dd>
                                 <dt className="col-md-5">Account Number</dt>
                                 <dd className="col-md-7">: 7300247657</dd>
                                 <dt className="col-md-5">Country</dt>

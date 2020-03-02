@@ -85,7 +85,7 @@ const KYCDocumentForm = (props) => {
                     </div>
                     <div className="form-group row">
                         <div className="col-md-12">
-                            <button className="btn btn-primary btn-sm px-4 mt-3 float-right mb-0">Submit KYC</button>
+                            <button className="btn btn-primary btn-sm px-4 mt-3 float-right mb-0" type="submit">Submit KYC</button>
                         </div>
                     </div>
                 </form>
