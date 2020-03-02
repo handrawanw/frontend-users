@@ -16,28 +16,32 @@ function FinancialBankDetail() {
 }
 
 const CardFinancialBank = () => {
-    <div className="card">
-        <div className="card-body">
-            <h4 className="header-title mt-0 mb-3">Financial &amp; Bank</h4>
+    return(
+        <div className="card">
+            <div className="card-body">
+                <h4 className="header-title mt-0 mb-3">Financial &amp; Bank</h4>
 
-            <DropdownFinancialBank />
-
-        </div>
-    </div>
-}
-
-const DropdownFinancialBank = (props) => {
-    <div className="card">
-        <div className="card-body">
-            <div className="accordion" id="accordionExample">
-
-                <DropdownBankAccount />
-                <DropdownCreditCard />
-                <DropdownCryptoDigitalAsset />
+                <DropdownFinancialBank />
 
             </div>
         </div>
-    </div>
+    )
+}
+
+const DropdownFinancialBank = (props) => {
+    return(
+        <div className="card">
+            <div className="card-body">
+                <div className="accordion" id="accordionExample">
+
+                    <DropdownBankAccount />
+                    <DropdownCreditCard />
+                    <DropdownCryptoDigitalAsset />
+
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default  FinancialBankDetail;

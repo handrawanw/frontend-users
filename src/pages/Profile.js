@@ -1,6 +1,9 @@
 import React from 'react'
 import CardDataBody from '../components/ProfileComponents/CardDataBody';
 import SummaryDetail from '../components/ProfileComponents/SummaryDetail';
+import FADetail from '../components/ProfileComponents/FADetail';
+import FinancialBankDetail from '../components/ProfileComponents/FinancialBankDetail';
+import KYCDocumentDetail from '../components/ProfileComponents/KYCDocumentDetail';
 
 function Profile(){
     return (
@@ -26,38 +29,10 @@ function Profile(){
                             </div>{/*end col*/}
                         </div>{/*end row*/} {/* end page title end breadcrumb */}
                         
-                        <CardData/>
-                        
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="tab-content detail-list" id="pills-tabContent">
+                        <CardData />
 
-                                    <div className="tab-pane fade" id="fa_detail">
-                                        <div className="row">
-                                            <div className="col-lg-12">
-                                                <div className="card">
-                                                    <div className="card-body">
-                                                        <div className="row">
-                                                            <ul className="col container-filter categories-filter mb-0" id="filter">
-                                                                <li><a className="categories active" data-filter="*">STEP 1</a></li>
-                                                                <li><a className="categories" data-filter=".branding">STEP 2</a></li>
-                                                                <li><a className="categories" data-filter=".design">STEP 3</a></li>
-                                                                <li><a className="categories" data-filter=".photo">FINISH</a></li>
-                                                            </ul>
-                                                        </div>{/* End portfolio */}
-                                                    </div>{/*end card-body*/}
-                                                </div>{/*end card*/}
-                                                <div className="card">
-                                                    <div className="card-body">
-                                                    </div>{/*end card-body*/}
-                                                </div>{/*end card*/}
-                                            </div>{/*end col*/}
-                                        </div>{/*end row*/}
-                                    </div>{/*end fa detail */}
-                                
-                                </div>{/*end tab-content*/}
-                            </div>{/*end col*/}
-                        </div>{/*end row*/}
+                        <CardDataContent />
+                        
                     </div>{/* container */}
                 </div>
                 {/* end page content */}
@@ -100,22 +75,30 @@ const CardDataNavigation = (props) => {
                     <a className="nav-link" id="fa_detail_tab" data-toggle="pill" href="#fa_detail">2 FA</a>
                 </li>
             </ul>
-        </div>//end card-data-navigation
+        </div>
 
-        <CardDataContent/>
+        
     )
 }
 
 const CardDataContent = (props) => {
-    <div className="row">
-        <div className="col-12">
-            <div className="tab-content detail-list" id="pills-tabContent">
+    return(
+        <div className="row">
+            <div className="col-12">
+                <div className="tab-content detail-list" id="pills-tabContent">
 
-                <SummaryDetail/>
+                    <SummaryDetail />
 
+                    <KYCDocumentDetail />
+                    
+                    <FinancialBankDetail />
+
+                    <FADetail />
+
+                </div>
             </div>
         </div>
-    </div>
+    )
 }
 
 export default Profile;
