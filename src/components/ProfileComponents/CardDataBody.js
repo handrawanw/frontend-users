@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useHistory, useRouteMatch, Link } from 'react-router-dom';
+import { useRouteMatch, Link } from 'react-router-dom';
 import { userContext } from '../../context';
 
 export default function CardDataBody() {

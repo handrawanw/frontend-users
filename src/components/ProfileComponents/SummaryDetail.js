@@ -3,7 +3,6 @@ import { userContext } from '../../context';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 function SummaryDetail() {
-
     return (
     <div className="tab-pane fade show active" id="summary_detail">
         <div className="row">

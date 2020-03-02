@@ -29,12 +29,12 @@ const NavigationMenu = () => {
             </a> */}
         </li>
         <li className="has-submenu" style={{cursor: 'pointer'}}>
-            {/* <Link to="/">
+            <Link to="/exchange">
                 <i className="dripicons-view-thumb" /><span> Exchange </span>
-            </Link> */}
-            <a href="#">
+            </Link>
+            {/* <a href="#">
                 <i className="dripicons-view-thumb" /><span> Exchange </span>
-            </a>
+            </a> */}
         </li>
         {/*end has-submenu*/}
         {/* <li className="has-submenu">

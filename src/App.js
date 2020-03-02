@@ -14,6 +14,7 @@ import Recover from './pages/Recover';
 
 //Auth
 import auth from './auth';
+import Exchange from './pages/Exchange';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/mywallet" component={MyWallet} />
+          <Route path="/exchange" component={Exchange} />
           <Route path="/recover" component={Recover} />
         </Switch>
 
