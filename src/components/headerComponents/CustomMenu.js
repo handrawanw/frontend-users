@@ -1,7 +1,7 @@
 import React from 'react'
 
 //Router
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
 const CustomMenu = () => {
     return (
@@ -17,6 +17,8 @@ const CustomMenu = () => {
 
 
 const NavigationMenu = () => {
+    let { url } = useRouteMatch();
+
     return (
     <ul className="navigation-menu">
         
@@ -29,7 +31,7 @@ const NavigationMenu = () => {
             </a> */}
         </li>
         <li className="has-submenu" style={{cursor: 'pointer'}}>
-            <Link to="/exchange">
+            <Link to={`${url}/exchange`}>
                 <i className="dripicons-view-thumb" /><span> Exchange </span>
             </Link>
             {/* <a href="#">

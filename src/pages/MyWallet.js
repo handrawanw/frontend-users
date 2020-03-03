@@ -18,6 +18,7 @@ import Profile from '../pages/Profile';
 import { urlContext, userContext } from '../context';
  
 import Swal from 'sweetalert2';
+import Exchange from './Exchange';
 
 export default function MyWallet() {
     
@@ -61,6 +62,9 @@ export default function MyWallet() {
             <Switch>
                 <Route exact path={path}>
                     <MainPage  ETH={ETH}/>
+                </Route>
+                <Route exact path={`${path}/exchange`}>
+                    <Exchange />
                 </Route>
                 <Route path={`${path}/profile`}>
                     <Profile />
