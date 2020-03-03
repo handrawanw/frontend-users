@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function EditProfile() {
+function EditProfile(props) {
     return (
-        <div className="page-wrapper">
-            <div className="page-content">
+        <div className="page-wrapper no-padding">
+            <div className="page-content no-padding mt-0">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-sm-12">
@@ -30,7 +30,7 @@ export default function EditProfile() {
                                             <form method="post" className="card-box">
                                                 <div className="form-group row">
                                                     <div className="col-md-12">
-                                                        <input type="file" name="profileFile" id="input-file-now-custom-1" className="dropify" data-default-file="../assets/images/no_picture.jpg" onChange={this.save} />
+                                                        <input type="file" name="profileFile" id="input-file-now-custom-1" className="dropify" data-default-file="../assets/images/no_picture.jpg" />
                                                     </div>
                                                 </div>
                                                 <div className="form-group row">
@@ -39,7 +39,7 @@ export default function EditProfile() {
                                                             <div className="input-group-prepend">
                                                                 <span className="input-group-text"><i className="far fa-user" /></span>
                                                             </div>
-                                                            <input type="text" id="example-input1-group1" name="name" className="form-control" placeholder="Full Name" onChange={this.save} />
+                                                            <input type="text" id="example-input1-group1" name="name" className="form-control" placeholder="Full Name" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -49,13 +49,13 @@ export default function EditProfile() {
                                                             <div className="input-group-prepend">
                                                                 <span className="input-group-text"><i className="far fa-envelope" /></span>
                                                             </div>
-                                                            <input type="email" id="example-input2-group2" name="email" className="form-control" placeholder="Email" onChange={this.save} />
+                                                            <input type="email" id="example-input2-group2" name="email" className="form-control" placeholder="Email" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="form-group row">
                                                     <div className="col-md-12">
-                                                        <select className="form-control" name="Country" onChange={this.save}>
+                                                        <select className="form-control" name="Country">
                                                             <option value>Country</option>
                                                             <option value="Indonesia">Indonesia</option>
                                                             <option value="Singapore">Singapore</option>
@@ -82,3 +82,5 @@ export default function EditProfile() {
         </div>
     )
 }
+
+export default EditProfile;

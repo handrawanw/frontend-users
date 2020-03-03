@@ -33,10 +33,13 @@ export default function CardDataBody() {
                     </div>{/*end col*/}
                     <div className="col-lg-6">
                         <div className="mt-5" style={{float: 'right'}}>
-                            <Link className="btn btn-warning" to={`${url}/editprofile`}>
-                                <i className="fa fa-edit" /> Edit Data
+                            <Link to={`${url}/editProfile`}>
+                                <button className="btn btn-warning" type="button">
+                                    <i className="fa fa-edit" /> 
+                                    Edit Data
+                                </button>
                             </Link>
-                            <Link className="btn btn-success ml-2" to={`${url}/changepassword`}>
+                            <Link className="btn btn-success ml-2" to={`${url}/changePassword`}>
                                 <i className="fa fa-edit" /> Change Password
                             </Link>
                         </div>

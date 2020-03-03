@@ -4,8 +4,13 @@ import SummaryDetail from '../components/ProfileComponents/SummaryDetail';
 import FADetail from '../components/ProfileComponents/FADetail';
 import FinancialBankDetail from '../components/ProfileComponents/FinancialBankDetail';
 import KYCDocumentDetail from '../components/ProfileComponents/KYCDocumentDetail';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import ProfileChangePassword from '../components/ProfileComponents/ProfileChangePassword';
+import EditProfile from '../components/ProfileComponents/EditProfile';
 
 function Profile(){
+    let { path } = useRouteMatch();
+
     return (
         <div>
             <div className="page-wrapper">
@@ -14,24 +19,34 @@ function Profile(){
                     <div className="container-fluid">
                         {/* Page-Title */}
                         
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <div className="page-title-box">
-                                    <div className="float-right">
-                                        <ol className="breadcrumb">
-                                            <li className="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
-                                            <li className="breadcrumb-item"><a href="javascript:void(0);">User</a></li>
-                                            <li className="breadcrumb-item active">Profile</li>
-                                        </ol>{/*end breadcrumb*/}
-                                    </div>{/*end /div*/}
-                                    <h4 className="page-title">Profile</h4>
-                                </div>{/*end page-title-box*/}
-                            </div>{/*end col*/}
-                        </div>{/*end row*/} {/* end page title end breadcrumb */}
+                        <Switch>
+                            <Route exact path={path}>
+                                <div className="row">
+                                    <div className="col-sm-12">
+                                        <div className="page-title-box">
+                                            <div className="float-right">
+                                                <ol className="breadcrumb">
+                                                    <li className="breadcrumb-item"><a href="javascript:void(0);">Dashboard</a></li>
+                                                    <li className="breadcrumb-item"><a href="javascript:void(0);">User</a></li>
+                                                    <li className="breadcrumb-item active">Profile</li>
+                                                </ol>{/*end breadcrumb*/}
+                                            </div>
+                                            <h4 className="page-title">Profile</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <CardData />
+                                <CardDataContent />
+                            </Route>
+                            <Route path={`${path}/changePassword`}>
+                                <ProfileChangePassword />
+                            </Route>
+                            <Route path={`${path}/editProfile`}>
+                                <EditProfile />
+                            </Route>
+                        </Switch>
                         
-                        <CardData />
-
-                        <CardDataContent />
                         
                     </div>{/* container */}
                 </div>

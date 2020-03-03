@@ -11,10 +11,10 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import MyWallet from './pages/MyWallet';
 import Recover from './pages/Recover';
+import Exchange from './pages/Exchange';
 
 //Auth
 import auth from './auth';
-import Exchange from './pages/Exchange';
 
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
           <Route path="/mywallet" component={MyWallet} />
           <Route path="/exchange" component={Exchange} />
           <Route path="/recover" component={Recover} />
+          <Route path="/exchange" component={Exchange} />
         </Switch>
 
   )

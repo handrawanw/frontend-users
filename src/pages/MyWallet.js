@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 //Router
-import { Switch, Route, useRouteMatch, useParams } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 //Dependency
 import axios from 'axios';
@@ -18,8 +18,6 @@ import Profile from '../pages/Profile';
 import { urlContext, userContext } from '../context';
  
 import Swal from 'sweetalert2';
-import ProfileChangePassword from '../components/ProfileComponents/ProfileChangePassword';
-import Exchange from './Exchange';
 
 export default function MyWallet() {
     
@@ -64,14 +62,8 @@ export default function MyWallet() {
                 <Route exact path={path}>
                     <MainPage  ETH={ETH}/>
                 </Route>
-                <Route path={path}>
-                    <Exchange />
-                </Route>
                 <Route path={`${path}/profile`}>
                     <Profile />
-                </Route>
-                <Route path={`${path}/changePassword`}>
-                    <ProfileChangePassword />
                 </Route>
             </Switch>
 

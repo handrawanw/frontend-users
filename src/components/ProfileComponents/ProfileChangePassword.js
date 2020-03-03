@@ -2,8 +2,8 @@ import React from 'react'
 
 function ProfileChangePassword() {
     return (
-        <div className="page-wrapper">
-          <div className="page-content">
+        <div className="page-wrapper no-padding">
+          <div className="page-content no-padding mt-0">
             <div className="container-fluid">
               <div className="row">
                 <div className="col-sm-12">
