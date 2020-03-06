@@ -22,7 +22,7 @@ function Recover(){
             }else{
                 if(/([\w].*[\@].*[\.])/g.test(info["reset_mail"])){
                     if(/[\<]|[\>]/g.test(info["reset_mail"])){
-                        reject("Karakter dilarang");
+                        reject("Character is prohibited");
                     }else{
                         resolve(true);
                     }
