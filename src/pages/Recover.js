@@ -1,7 +1,73 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, { useContext } from 'react'
+import {Link} from 'react-router-dom';
+import Swal from "sweetalert2";
+import axios from 'axios';
+import {urlContext} from "../context";
 
 function Recover(){
+    const baseUrl=useContext(urlContext);
+    let info={
+        reset_mail:""
+    };
+    function save(event) {
+        info[event.target.name]=event.target.value;
+    }
+
+    function Kirim(e){
+        e.preventDefault();
+    let prosesCek=new Promise((resolve,reject)=>{
+        if(info.hasOwnProperty("reset_mail")){
+            if(info["reset_mail"]===""){
+                reject("Input is empty");
+            }else{
+                if(/([\w].*[\@].*[\.])/g.test(info["reset_mail"])){
+                    if(/[\<]|[\>]/g.test(info["reset_mail"])){
+                        reject("Karakter dilarang");
+                    }else{
+                        resolve(true);
+                    }
+                }else{
+                    reject("invalid email");
+                }
+            }
+        }
+    });
+
+    prosesCek.then(res=>{
+      axios.post(`${baseUrl}/users/forgotPassword`,{
+        email:info.reset_mail
+      }).then(res=>{
+          Swal.fire({
+            icon:'success',
+            title:`${res.data.message}`,
+            showCloseButton:true,
+            timer:0,
+        });
+      }).catch(err=>{
+    let msg="";
+    if(typeof err.response==="undefined"){
+        msg="Bad internet connections";
+    }else{
+        msg=err.response.data.message;
+    }
+        Swal.fire({
+            icon:'error',
+            title:msg,
+            showCloseButton:true,
+            timer:0,
+        });
+    });
+
+    }).catch(err=>{
+        Swal.fire({
+            icon:'error',
+            title:err,
+            showCloseButton:true,
+            timer:0,
+        });
+    });
+    
+    }
     return (
         <div className="account-body accountbg">
             {/* Log In page */}
@@ -20,20 +86,20 @@ function Recover(){
                                         <p className="text-muted mb-0">Enter your Email and instructions will be sent to you!</p>
                                     </div>
                                     {/*end auth-logo-text*/}
-                                    <form className="form-horizontal auth-form my-4" action="index.html">
+                                    <form method="post" encType="multipart/form-data" className="form-horizontal auth-form my-4">
                                         <div className="form-group">
                                             <label htmlFor="useremail">Email</label>
                                             <div className="input-group mb-3">
                                                 <span className="auth-form-icon">
                                                     <i className="dripicons-mail" /> 
                                                 </span>
-                                                <input type="email" className="form-control" id="useremail" placeholder="Enter Email" />
+                                                <input type="email" name="reset_mail" className="form-control" id="useremail" placeholder="Enter Email" onChange={save} />
                                             </div>
                                         </div>
                                         {/*end form-group*/}
                                         <div className="form-group mb-0 row">
                                             <div className="col-12 mt-2">
-                                                <button className="btn btn-primary btn-round btn-block waves-effect waves-light" type="submit">Reset <i className="fas fa-sign-in-alt ml-1" /></button>
+                                                <button className="btn btn-primary btn-round btn-block waves-effect waves-light" type="submit" onClick={Kirim}>Reset <i className="fas fa-sign-in-alt ml-1" /></button>
                                             </div>
                                             {/*end col*/}
                                         </div>
